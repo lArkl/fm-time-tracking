@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
   
   <title>Frontend Mentor | Time tracking dashboard</title>
 
@@ -16,65 +20,108 @@
 </head>
 <body>
 
-  Report for
-  Jeremy Robson
+  <main>
+      <header class="user">
+        <div class="user__header">
+          <img src="./images/image-jeremy.png" alt="Jeremy">
+          <h1>
+            Report for
+            <strong>
+              Jeremy Robson
+            </strong>
+          </h1>
+        </div>
+          <nav>
+            <a href="#">
+              Daily
+            </a>
+            <a href="#">
+              Weekly
+            </a>
+            <a href="#">
+              Monthly            
+            </a>
+          </nav>
+      </header>
+      <section class="reports">
+        <article>
+          <diV class="content">
+            <h2>Work</h2>
+            <h3>32hrs</h3>
+            <h3>Last week - 36hrs</h3>
+          </diV>
+        </article>
+      </section>
 
-  Daily
-  Weekly
-  Monthly
+  </main>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
-
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
-
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
 
   
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </footer>
+
+  <script>
+    const reportsRef = document.querySelector(".reports");
+
+    const data = {
+      user: "Jeremy Robson",
+      report: {
+        work: {
+          daily: { prev: "7hrs", now: "5hrs"},
+          weekly: { prev: "36hrs", now: "32hrs"},
+          monthly: { prev: "103hrs", now: "128hrs"},
+        },
+        play: {
+          daily: {now: "1hr", prev: "2hrs"},
+          weekly: {now: "10hrs", prev: "8hrs"},
+          monthly: {now: "23hrs", prev: "29hrs"}
+        },
+      }
+    };
+    // const newReportNode = document.createElement("article");
+    // newReportNode.className = "report__work";
+    // const reportHeaderNode = document.createElement("h3");
+    // reportsRef.appendChild()
+
+
+
+  // Study
+  // 0hrs <!-- daily -->
+  // Previous - 1hr <!-- daily -->
+  // 4hrs <!-- weekly -->
+  // Previous - 7hrs <!-- weekly -->
+  // 13hrs <!-- monthly -->
+  // Previous - 19hrs <!-- monthly -->
+
+  // Exercise
+  // 1hr <!-- daily -->
+  // Previous - 1hr <!-- daily -->
+  // 4hrs <!-- weekly -->
+  // Previous - 5hrs <!-- weekly -->
+  // 11hrs <!-- monthly -->
+  // Previous - 18hrs <!-- monthly -->
+
+  // Social
+  // 1hr <!-- daily -->
+  // Previous - 3hrs <!-- daily -->
+  // 5hrs <!-- weekly -->
+  // Previous - 10hrs <!-- weekly -->
+  // 21hrs <!-- monthly -->
+  // Previous - 23hrs <!-- monthly -->
+
+  // Self Care
+  // 0hrs <!-- daily -->
+  // Previous - 1hr <!-- daily -->
+  // 2hrs <!-- weekly -->
+  // Previous - 2hrs <!-- weekly -->
+  // 7hrs <!-- monthly -->
+  // Previous - 11hrs <!-- monthly -->
+
+  </script>
 </body>
 </html>
