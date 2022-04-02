@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +11,6 @@
   <link rel="stylesheet" href="./styles.css">
   
   <title>Frontend Mentor | Time tracking dashboard</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
@@ -45,15 +39,17 @@
           </nav>
       </header>
       <section class="reports">
-        <article>
-          <diV class="content">
+        <!-- <article class="reports__work">
+          <diV class="reports__content">
             <h2>Work</h2>
             <h3>32hrs</h3>
             <h3>Last week - 36hrs</h3>
+            <div>
+              <img src="./images/icon-ellipsis.svg" alt="options">
+            </div>
           </diV>
-        </article>
+        </article> -->
       </section>
-
   </main>
 
 
@@ -68,7 +64,7 @@
 
   <script>
     const reportsRef = document.querySelector(".reports");
-
+    // const reportsRef = document.querySelector("")
     const data = {
       user: "Jeremy Robson",
       report: {
@@ -82,47 +78,76 @@
           weekly: {now: "10hrs", prev: "8hrs"},
           monthly: {now: "23hrs", prev: "29hrs"}
         },
+        study: {
+          daily: {now: "0hr", prev: "1hr"},
+          weekly: {now: "4hrs", prev: "7hrs"},
+          monthly: {now: "13hrs", prev: "19hrs"}
+        },
+        exercise: {
+          daily: {now: "1hr", prev: "1hrs"},
+          weekly: {now: "4hrs", prev: "5hrs"},
+          monthly: {now: "1hrs", prev: "18hrs"}
+        },
+        social: {
+          daily: {now: "1hr", prev: "3hrs"},
+          weekly: {now: "5hrs", prev: "10hrs"},
+          monthly: {now: "21hrs", prev: "23hrs"}
+        },
+        "self-care": {
+          daily: {now: "0hr", prev: "1hrs"},
+          weekly: {now: "2hrs", prev: "2hrs"},
+          monthly: {now: "7hrs", prev: "11hrs"}
+        }
       }
     };
-    // const newReportNode = document.createElement("article");
-    // newReportNode.className = "report__work";
-    // const reportHeaderNode = document.createElement("h3");
-    // reportsRef.appendChild()
 
 
 
-  // Study
-  // 0hrs <!-- daily -->
-  // Previous - 1hr <!-- daily -->
-  // 4hrs <!-- weekly -->
-  // Previous - 7hrs <!-- weekly -->
-  // 13hrs <!-- monthly -->
-  // Previous - 19hrs <!-- monthly -->
 
-  // Exercise
-  // 1hr <!-- daily -->
-  // Previous - 1hr <!-- daily -->
-  // 4hrs <!-- weekly -->
-  // Previous - 5hrs <!-- weekly -->
-  // 11hrs <!-- monthly -->
-  // Previous - 18hrs <!-- monthly -->
 
-  // Social
-  // 1hr <!-- daily -->
-  // Previous - 3hrs <!-- daily -->
-  // 5hrs <!-- weekly -->
-  // Previous - 10hrs <!-- weekly -->
-  // 21hrs <!-- monthly -->
-  // Previous - 23hrs <!-- monthly -->
 
-  // Self Care
-  // 0hrs <!-- daily -->
-  // Previous - 1hr <!-- daily -->
-  // 2hrs <!-- weekly -->
-  // Previous - 2hrs <!-- weekly -->
-  // 7hrs <!-- monthly -->
-  // Previous - 11hrs <!-- monthly -->
 
+
+    const frequency = "daily";
+    const periodDict = {
+      daily: "Day",
+      weekly: "Week",
+      monthly: "Month"
+    };
+
+    Object.entries(data.report).map(([task, periodsValues]) => {
+      const { prev, now } = periodsValues[frequency];
+      const period = periodDict[frequency];
+      const reportArticleNode = document.createElement("article");
+      reportArticleNode.className = `reports__${task}`;
+      reportsRef.appendChild(reportArticleNode);
+
+      const reportContentNode = document.createElement("div");
+      reportContentNode.className = "reports__content";
+      reportArticleNode.appendChild(reportContentNode);
+
+      const reportTypeNode = document.createElement("h2");
+      reportTypeNode.innerText = task[0].toUpperCase() + task.slice(1);
+      reportContentNode.appendChild(reportTypeNode);
+
+      const reportCurrNode = document.createElement("h3");
+      reportCurrNode.innerText = now
+      reportContentNode.appendChild(reportCurrNode);
+
+      const reportPrevNode = document.createElement("h3");
+      reportPrevNode.innerText = `Last ${period} - ${prev}`
+      reportContentNode.appendChild(reportPrevNode);
+
+      const reportOptionNode = document.createElement("div");
+      const reportOptionImgNode = document.createElement("img");
+      reportOptionImgNode.src = "./images/icon-ellipsis.svg";
+      reportOptionImgNode.alt = `${task} options`;
+      reportOptionNode.appendChild(reportOptionImgNode);
+
+      reportContentNode.appendChild(reportOptionNode);
+
+    });
+    
   </script>
 </body>
 </html>
