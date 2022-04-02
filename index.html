@@ -26,128 +26,26 @@
             </strong>
           </h1>
         </div>
-          <nav>
-            <a href="#">
-              Daily
-            </a>
-            <a href="#">
-              Weekly
-            </a>
-            <a href="#">
-              Monthly            
-            </a>
-          </nav>
+        <nav>
+          <a href="#">
+            Daily
+          </a>
+          <a href="#">
+            Weekly
+          </a>
+          <a href="#">
+            Monthly
+          </a>
+        </nav>
       </header>
       <section class="reports">
-        <!-- <article class="reports__work">
-          <diV class="reports__content">
-            <h2>Work</h2>
-            <h3>32hrs</h3>
-            <h3>Last week - 36hrs</h3>
-            <div>
-              <img src="./images/icon-ellipsis.svg" alt="options">
-            </div>
-          </diV>
-        </article> -->
       </section>
-  </main>
-
-
-
-
-
-  
+  </main>  
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </footer>
 
-  <script>
-    const reportsRef = document.querySelector(".reports");
-    // const reportsRef = document.querySelector("")
-    const data = {
-      user: "Jeremy Robson",
-      report: {
-        work: {
-          daily: { prev: "7hrs", now: "5hrs"},
-          weekly: { prev: "36hrs", now: "32hrs"},
-          monthly: { prev: "103hrs", now: "128hrs"},
-        },
-        play: {
-          daily: {now: "1hr", prev: "2hrs"},
-          weekly: {now: "10hrs", prev: "8hrs"},
-          monthly: {now: "23hrs", prev: "29hrs"}
-        },
-        study: {
-          daily: {now: "0hr", prev: "1hr"},
-          weekly: {now: "4hrs", prev: "7hrs"},
-          monthly: {now: "13hrs", prev: "19hrs"}
-        },
-        exercise: {
-          daily: {now: "1hr", prev: "1hrs"},
-          weekly: {now: "4hrs", prev: "5hrs"},
-          monthly: {now: "1hrs", prev: "18hrs"}
-        },
-        social: {
-          daily: {now: "1hr", prev: "3hrs"},
-          weekly: {now: "5hrs", prev: "10hrs"},
-          monthly: {now: "21hrs", prev: "23hrs"}
-        },
-        "self-care": {
-          daily: {now: "0hr", prev: "1hrs"},
-          weekly: {now: "2hrs", prev: "2hrs"},
-          monthly: {now: "7hrs", prev: "11hrs"}
-        }
-      }
-    };
-
-
-
-
-
-
-
-
-    const frequency = "daily";
-    const periodDict = {
-      daily: "Day",
-      weekly: "Week",
-      monthly: "Month"
-    };
-
-    Object.entries(data.report).map(([task, periodsValues]) => {
-      const { prev, now } = periodsValues[frequency];
-      const period = periodDict[frequency];
-      const reportArticleNode = document.createElement("article");
-      reportArticleNode.className = `reports__${task}`;
-      reportsRef.appendChild(reportArticleNode);
-
-      const reportContentNode = document.createElement("div");
-      reportContentNode.className = "reports__content";
-      reportArticleNode.appendChild(reportContentNode);
-
-      const reportTypeNode = document.createElement("h2");
-      reportTypeNode.innerText = task[0].toUpperCase() + task.slice(1);
-      reportContentNode.appendChild(reportTypeNode);
-
-      const reportCurrNode = document.createElement("h3");
-      reportCurrNode.innerText = now
-      reportContentNode.appendChild(reportCurrNode);
-
-      const reportPrevNode = document.createElement("h3");
-      reportPrevNode.innerText = `Last ${period} - ${prev}`
-      reportContentNode.appendChild(reportPrevNode);
-
-      const reportOptionNode = document.createElement("div");
-      const reportOptionImgNode = document.createElement("img");
-      reportOptionImgNode.src = "./images/icon-ellipsis.svg";
-      reportOptionImgNode.alt = `${task} options`;
-      reportOptionNode.appendChild(reportOptionImgNode);
-
-      reportContentNode.appendChild(reportOptionNode);
-
-    });
-    
-  </script>
+  <script src="./index.js"></script>
 </body>
 </html>
