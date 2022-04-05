@@ -20,6 +20,7 @@ body {
   color: var(--pale-blue);
   font-size: 18px;
   font-family: 'Rubik', sans-serif;
+  height: 95vh;
 }
 
 a {
@@ -40,12 +41,21 @@ h1, h2, h3 {
 
 
 main {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 1.5rem;
+  justify-content: center;
   margin-top: 1.4rem;
+}
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
 
 .user {
@@ -197,6 +207,7 @@ article {
 @media screen and (min-width: 1000px){
   main {
     flex-direction: row;
+    height: 90%;
   }
 
   .user {
