@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/lArkl/fm-time-tracking](https://github.com/lArkl/fm-time-tracking)
+- Solution URL: [https://www.frontendmentor.io](https://www.frontendmentor.io/solutions/responsive-dashboard-with-bem-flex-and-grid-SkeDymtQc)
 - Live Site URL: [https://larkl.github.io/fm-time-tracking/](https://larkl.github.io/fm-time-tracking/)
 
 ## My process
@@ -53,11 +53,6 @@ Users should be able to:
 
 ### Continued development
 
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
